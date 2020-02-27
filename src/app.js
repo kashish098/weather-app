@@ -63,20 +63,6 @@ app.get('/weather', (req, res) => {
     });
 })
 
-// app.get('/products',(req,res)=>{
-//     console.log(req.query);
-    
-//     if(!req.query.search){
-//         return res.send({
-//             error:'please provide the location'
-//         })
-//     }
-
-//     res.send({
-//         search:"blah blah blah"
-//     });
-// })
-
 app.get('/help/*',(req,res)=>{
     res.render('404',{
         title:'404 error',
