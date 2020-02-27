@@ -21,7 +21,8 @@ weatherForm.addEventListener('submit',(e)=>{
             }
             else{
                 m1.textContent=data.location;
-                m2.textContent=data.forecast.summary+data.forecast.rainProb+data.forecast.temp;
+                const info='TimeZone '+data.forecast.timezone+' Pressure '+data.forecast.pressure
+                m2.textContent=data.forecast.summary+data.forecast.rainProb+data.forecast.temp+'.'+info;
                 // console.log(data.forecast.summary);
                 // console.log(data.forecast.rainProb);
                 // console.log(data.forecast.temp);

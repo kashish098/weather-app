@@ -7,14 +7,16 @@ const forecast=(lat,long,callback)=>{
 
     if(error){
         callback('Unable to connect to the weather app',undefined);
-        console.log(response);
+        //console.log(response);
     } else if(body.error){
         callback('Unable to find the location',undefined);
     } else{
         callback(undefined,{
             summary:body.daily.data[0].summary,
             temp:'Temp. is '+body.currently.temperature+'C',
-            rainProb:'There is '+body.currently.precipProbability+' probability of rain'
+            rainProb:'There is '+body.currently.precipProbability+' probability of rain',
+            pressure:body.currently.pressure+' bar',
+            timezone:body.timezone
         });
     }   
   });
